@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BankAccountController;
 use App\Http\Controllers\BankTransfersController;
+use App\Http\Controllers\TransferTypeController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -35,3 +36,6 @@ Route::controller(BankTransfersController::class)->group(function(){
     Route::post('/BankTransfers','Insert');
 });
 
+Route::controller(TransferTypeController::class)->group(function(){
+    Route::get('/TransferType/{clasification}','GetTransferTypeByClasification');
+});
